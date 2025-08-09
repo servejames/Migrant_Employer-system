@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foreign Worker Resume</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .form-container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+        .section { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .section-title { color: #2c3e50; margin-bottom: 15px; }
+        .btn { background: #3498db; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; }
+        .btn:hover { background: #2980b9; }
+        .checkbox-group { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+        .checkbox-item { display: flex; align-items: center; }
+        .checkbox-item input { width: auto; margin-right: 8px; }
+        .checkbox-item label { display: inline; font-weight: normal; }
+        @media (max-width: 600px) {
+            .form-group { margin-bottom: 10px; }
+            .checkbox-group { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Foreign Worker Resume Form</h1>
+        <form id="resumeForm">
+            <!-- Personal Information Section -->
+            <div class="section">
+                <h2 class="section-title">Personal Information</h2>
+                <div class="form-group">
+                    <label for="name">NAME:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="nickname">NICK NAME:</label>
+                    <input type="text" id="nickname" name="nickname">
+                </div>
+                <div class="form-group">
+                    <label>GENDER:</label>
+                    <select name="gender" required>
+                        <option value="">-- Select --</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="chineseName">CHINESE NAME:</label>
+                    <input type="text" id="chineseName" name="chineseName">
+                </div>
+                <div class="form-group">
+                    <label for="yearsInTaiwan">HOW MANY YEARS IN TAIWAN:</label>
+                    <input type="number" id="yearsInTaiwan" name="yearsInTaiwan" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="birthday">BIRTHDAY:</label>
+                    <input type="date" id="birthday" name="birthday" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">AGE:</label>
+                    <input type="number" id="age" name="age" min="18" required> yrs old
+                </div>
+                <div class="form-group">
+                    <label for="height">HEIGHT:</label>
+                    <input type="number" id="height" name="height" min="100" max="250" required> cm
+                </div>
+                <div class="form-group">
+                    <label for="weight">WEIGHT:</label>
+                    <input type="number" id="weight" name="weight" min="30" max="200" required> kg
+                </div>
+            </div>
+
+            <!-- Health Information Section -->
+            <div class="section">
+                <h2 class="section-title">Health Information</h2>
+                <div class="form-group">
+                    <label>BEATLENUT:</label>
+                    <select name="beatlenut" required>
+                        <option value="no">NO</option>
+                        <option value="yes">YES</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>COLORBLINDNESS:</label>
+                    <select name="colorblindness" required>
+                        <option value="no">NO</option>
+                        <option value="yes">YES</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="country">COUNTRY:</label>
+                    <input type="text" id="country" name="country" value="Philippines" required>
+                </div>
+                <div class="form-group">
+                    <label>DRINK WINE:</label>
+                    <select name="drinkWine" required>
+                        <option value="no">NO</option>
+                        <option value="yes">YES</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>EYESIGHT:</label>
+                    <select name="eyesight" required>
+                        <option value="normal">NORMAL</option>
+                        <option value="nearsightness">NEARSIGHTNESS</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>SMOKE:</label>
+                    <select name="smoke" required>
+                        <option value="no">NO</option>
+                        <option value="yes">YES</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Additional Personal Information -->
+            <div class="section">
+                <h2 class="section-title">Additional Information</h2>
+                <div class="form-group">
+                    <label>MARRIED:</label>
+                    <select name="married" required>
+                        <option value="single">SINGLE</option>
+                        <option value="married">MARRIED</option>
+                        <option value="divorced">DIVORCED</option>
+                        <option value="separated">SEPARATED</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>TATTOO:</label>
+                    <select name="tattoo" required>
+                        <option value="no">NO</option>
+                        <option value="yes">YES</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>HAND USING:</label>
+                    <select name="handUsing" required>
+                        <option value="right">RIGHT</option>
+                        <option value="left">LEFT</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>EDUCATION:</label>
+                    <select name="education" required>
+                        <option value="elementary">Elementary School</option>
+                        <option value="junior">Junior High School</option>
+                        <option value="high">High School</option>
+                        <option value="college">Collage/University</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="religion">RELIGION:</label>
+                    <input type="text" id="religion" name="religion">
+                </div>
+                <div class="form-group">
+                    <label for="culture">CULTURE:</label>
+                    <input type="text" id="culture" name="culture">
+                </div>
+                <div class="form-group">
+                    <label>LANGUAGE:</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="tagalog" name="language" value="tagalog">
+                            <label for="tagalog">TAGALOG</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="english" name="language" value="english">
+                            <label for="english">ENGLISH</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mandarin" name="language" value="mandarin">
+                            <label for="mandarin">MANDARIN</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="taiwanese" name="language" value="taiwanese">
+                            <label for="taiwanese">TAIWANESE</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents Section -->
+            <div class="section">
+                <h2 class="section-title">Documents</h2>
+                <div class="form-group">
+                    <label for="arcNo">ARC NO:</label>
+                    <input type="text" id="arcNo" name="arcNo">
+                </div>
+                <div class="form-group">
+                    <label for="arcExpired">EXPIRED DATE:</label>
+                    <input type="date" id="arcExpired" name="arcExpired">
+                </div>
+                <div class="form-group">
+                    <label for="passportNo">PASSPORT NO:</label>
+                    <input type="text" id="passportNo" name="passportNo">
+                </div>
+                <div class="form-group">
+                    <label for="passportExpired">EXPIRED DATE:</label>
+                    <input type="date" id="passportExpired" name="passportExpired">
+                </div>
+                <div class="form-group">
+                    <label>MEDICAL:</label>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <input type="text" id="medicalYear" name="medicalYear" placeholder="YY" style="width: 50px;"> /
+                        <input type="text" id="medicalMonth" name="medicalMonth" placeholder="MM" style="width: 50px;"> /
+                        <input type="text" id="medicalDay" name="medicalDay" placeholder="DD" style="width: 50px;">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="entryDate">LATEST ENTRY DATE IN TW:</label>
+                    <input type="date" id="entryDate" name="entryDate">
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="form-group">
+                    <label>SKILLS:</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="feedingFood" name="skills" value="feedingFood">
+                            <label for="feedingFood">FEEDING FOOD</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="massage" name="skills" value="massage">
+                            <label for="massage">MASSAGE</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="accompanyPatient" name="skills" value="accompanyPatient">
+                            <label for="accompanyPatient">ACCOMPANY PATIENT</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="washClothes" name="skills" value="washClothes">
+                            <label for="washClothes">WASH CLOTHES</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="tubeFeeding" name="skills" value="tubeFeeding">
+                            <label for="tubeFeeding">TUBE FEEDING</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="helpWheelchair" name="skills" value="helpWheelchair">
+                            <label for="helpWheelchair">HELPING PATIENT TO WHEELCHAIR FROM BED</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="suctionPhlegm" name="skills" value="suctionPhlegm">
+                            <label for="suctionPhlegm">SUCTION PHLEGM</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="rehabilitation" name="skills" value="rehabilitation">
+                            <label for="rehabilitation">REHABILITATION</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="washCar" name="skills" value="washCar">
+                            <label for="washCar">WASH CAR</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="takeShower" name="skills" value="takeShower">
+                            <label for="takeShower">TAKE SHOWER</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="takeMedicine" name="skills" value="takeMedicine">
+                            <label for="takeMedicine">TAKE MEDICINE</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="bathBaby" name="skills" value="bathBaby">
+                            <label for="bathBaby">TAKE BATH FOR BABY</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cooking" name="skills" value="cooking">
+                            <label for="cooking">COOKING</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="changeDiaper" name="skills" value="changeDiaper">
+                            <label for="changeDiaper">CHANGE DIAPER</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cleaning" name="skills" value="cleaning">
+                            <label for="cleaning">CLEANING</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="cpr" name="skills" value="cpr">
+                            <label for="cpr">CPR</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="changeDiaperBaby" name="skills" value="changeDiaperBaby">
+                            <label for="changeDiaperBaby">CHANGE DIAPER FOR BABY</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Preferences Section -->
+            <div class="section">
+                <h2 class="section-title">Work Preferences</h2>
+                <div class="form-group">
+                    <label>PATIENT WHO TO BE CARED:</label>
+                    <select name="patientGender">
+                        <option value="male">MALE</option>
+                        <option value="female">FEMALE</option>
+                        <option value="noPreference">NO PREFERENCE</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="patientAge">AGE:</label>
+                    <input type="number" id="patientAge" name="patientAge" min="0"> yrs old
+                </div>
+                <div class="form-group">
+                    <label for="patientHeight">HER/HIS HEIGHT:</label>
+                    <input type="number" id="patientHeight" name="patientHeight" min="50" max="250"> cm
+                </div>
+                <div class="form-group">
+                    <label for="patientWeight">HER/HIS WEIGHT:</label>
+                    <input type="number" id="patientWeight" name="patientWeight" min="5" max="200"> kg
+                </div>
+                
+                <div class="form-group">
+                    <label>WORK ITEMS WHICH YOU WISH TO DO:</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="bedRidden" name="workItems" value="bedRidden">
+                            <label for="bedRidden">BED-RIDDEN PATIENT</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="halfParalysis" name="workItems" value="halfParalysis">
+                            <label for="halfParalysis">HALF PARALYSIS</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="fullParalysis" name="workItems" value="fullParalysis">
+                            <label for="fullParalysis">FULL PARALYSIS</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="exerciseAssistance" name="workItems" value="exerciseAssistance">
+                            <label for="exerciseAssistance">EXERCISE ASSISTANCE</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="stroke" name="workItems" value="stroke">
+                            <label for="stroke">STROKE</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="intellectualDisability" name="workItems" value="intellectualDisability">
+                            <label for="intellectualDisability">INTELLECTUAL DISABILITY</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="needWheelchair" name="workItems" value="needWheelchair">
+                            <label for="needWheelchair">NEED WHEELCHAIR</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="dialyses" name="workItems" value="dialyses">
+                            <label for="dialyses">DIALYSES</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="moveBody" name="workItems" value="moveBody">
+                            <label for="moveBody">MOVE BODY</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="massageWork" name="workItems" value="massageWork">
+                            <label for="massageWork">MASSAGE</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="rehabilitationWork" name="workItems" value="rehabilitationWork">
+                            <label for="rehabilitationWork">REHABILITATION</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="changeDiaperWork" name="workItems" value="changeDiaperWork">
+                            <label for="changeDiaperWork">CHANGE DIAPER</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="helpEating" name="workItems" value="helpEating">
+                            <label for="helpEating">HELP EATING</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="helpUrineStool" name="workItems" value="helpUrineStool">
+                            <label for="helpUrineStool">HELP URINE AND STOOL</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="helpWalk" name="workItems" value="helpWalk">
+                            <label for="helpWalk">HELP WALK</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="regardlessWork" name="workItems" value="regardlessWork">
+                            <label for="regardlessWork">REGARDLESS</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="workPlace">WHICH PLACE TO WORK?</label>
+                    <input type="text" id="workPlace" name="workPlace">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="regardlessPlace" name="regardlessPlace" value="yes">
+                        <label for="regardlessPlace">REGARDLESS</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="salary">SALARY? NTD:</label>
+                    <input type="number" id="salary" name="salary" min="0">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="regardlessSalary" name="regardlessSalary" value="yes">
+                        <label for="regardlessSalary">REGARDLESS</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="currentLocation">WHERE YOU LIVE CURRENTLY?</label>
+                    <input type="text" id="currentLocation" name="currentLocation">
+                </div>
+                
+                <div class="form-group">
+                    <label for="expiryDate">WHAT IS THE EXPIRED DATE AFTER YOUR 60 DAYS FOR FINDING NEW JOB?</label>
+                    <input type="date" id="expiryDate" name="expiryDate">
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Submit Resume</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('resumeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect all form data including checkboxes
+            const formData = new FormData(this);
+            const data = {};
+            
+            // Handle regular form fields
+            for (let [key, value] of formData.entries()) {
+                if (key === 'skills' || key === 'workItems' || key === 'language') {
+                    // These will be handled separately as arrays
+                    continue;
+                }
+                data[key] = value;
+            }
+            
+            // Handle checkbox groups as arrays
+            data.skills = Array.from(document.querySelectorAll('input[name="skills"]:checked')).map(cb => cb.value);
+            data.workItems = Array.from(document.querySelectorAll('input[name="workItems"]:checked')).map(cb => cb.value);
+            data.language = Array.from(document.querySelectorAll('input[name="language"]:checked')).map(cb => cb.value);
+            
+            // Log the data for debugging
+            console.log('Form data:', data);
+            
+            // Here you would typically send the data to your server
+            // For demonstration, we'll just show an alert
+            alert('Form data collected successfully! Check console for details.');
+            
+            // Example of how you might send to a server:
+            /*
+            fetch('/api/resume', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                alert('Resume submitted successfully!');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Error submitting resume.');
+            });
+            */
+        });
+    </script>
+</body>
+</html>
